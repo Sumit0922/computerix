@@ -12,14 +12,13 @@ import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   await EasyLocalization.ensureInitialized();
 
   runApp(
     EasyLocalization(
       supportedLocales: [Locale('en', 'US'), Locale('es', 'ES')],
-      path: 'assets/translation', // <-- change this to the path where your JSON files are stored
-      fallbackLocale: Locale('en', 'US'),
+      path: 'assets/translation',
+      fallbackLocale: const Locale('en', 'US'),
       child: const MainApp(),
     ),
   );
@@ -64,9 +63,9 @@ class _MainAppState extends State<MainApp> {
           darkTheme: MyTheme().darkTheme,
           themeMode: value.themeValue == true ? ThemeMode.dark : ThemeMode.light,
           debugShowCheckedModeBanner: false,
-          locale: context.locale, // Set the locale from easy_localization
-          localizationsDelegates: context.localizationDelegates, // Set localization delegates
-          supportedLocales: context.supportedLocales, // Set supported locales
+          locale: context.locale,
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
           home: OnboardingWrapper(),
         ),
       ),

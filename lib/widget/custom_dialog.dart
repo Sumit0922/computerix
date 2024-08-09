@@ -22,7 +22,7 @@ class CustomProfile extends StatelessWidget {
     showModalBottomSheet(
       context: context,
       builder: (BuildContext bottomSheetContext) {
-        // Access the LanguageProvider within the BottomSheet context
+
         final languageProvider = Provider.of<LanguageProvider>(bottomSheetContext, listen: false);
 
         return Container(
@@ -99,17 +99,17 @@ class CustomProfile extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Profile',
+                    'profile'.tr(),
                     style: TextStyle(
                         fontFamily: 'Urbaninst',
                         fontSize: 24,
                         fontWeight: FontWeight.w600),
-                  ).tr(),
+                  ),
                   InkWell(
                       onTap: (){
                            _showLanguageDropdown(context);
                       },
-                      child:  Icon(Icons.settings))
+                      child:  Icon(Icons.language_sharp))
                 ],
               ),
             ),
@@ -197,9 +197,9 @@ class CustomProfile extends StatelessWidget {
             ),
              Flexible(
               child: Text(
-                'Mode Theme',
+                'Mode Theme'.tr(),
                 style: TextStyle(fontFamily: 'Urbaninst', fontSize: 20),
-              ).tr(),
+              ),
             ),
             const Flexible(
               child: SizedBox(
@@ -253,15 +253,15 @@ class CustomProfile extends StatelessWidget {
                   textBuilder: (value) => value
                       ?  Center(
                           child: Text(
-                            'Dark',
+                            'Dark'.tr(),
                             style: TextStyle(
                                 color: Colors.white,
                                 fontFamily: 'Urbaninst',
                                 fontWeight: FontWeight.w600),
-                          ).tr(),
+                          ),
                         )
                       :  Center(
-                          child: Text('Light',
+                          child: Text('Light'.tr(),
                               style: TextStyle(
                                   color: Colors.black,
                                   fontFamily: 'Urbaninst',

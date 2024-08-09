@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'dart:io';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:connectivity_plus/connectivity_plus.dart'; // Import the connectivity package
 import 'package:newsflash/model/news_infoModel.dart';
@@ -68,7 +69,7 @@ class _HomeState extends State<Home> {
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         forceMaterialTransparency: true,
-        title: Text('NewsFlash', style: Theme.of(context).textTheme.titleMedium),
+        title: Text('news_flash'.tr(), style: Theme.of(context).textTheme.titleMedium),
         actions: [
           Padding(
             padding: const EdgeInsets.all(8),
